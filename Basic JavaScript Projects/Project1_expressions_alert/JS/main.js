@@ -1,3 +1,3 @@
-document.write("\"Be who you are and say what you feel,"
-+ "because those who mind don\'t matter and those who matter don\'t mind.\""
-+"-Dr.Seuss");
+var blues = "I have the blues.";
+var blues = blues.fontcolor("blues");
+document.write(blues);
