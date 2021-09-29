@@ -1,3 +1,5 @@
+window.alert("Dont Forget to click OK!");
+document.write("YOU HAVE TO CLICK THE BUTTON!!!!");
 
 function My_First_Function () { // Defining a function and naming it
     var str = "This text is green!"; //Defining a variable and giving it a sring value
