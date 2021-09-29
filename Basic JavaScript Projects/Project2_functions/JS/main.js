@@ -13,3 +13,4 @@ function myFunction() {
     sentence += " a lot from this!";
     document.getElementById("Concatencate").innerHTML = sentence;
 }
+//var foo = document.getElementsByTagName("p");
