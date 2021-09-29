@@ -8,7 +8,7 @@ function My_First_Function () { // Defining a function and naming it
     document.getElementById("Green_Text", "p").innerHTML = result; // putting the value of the result into html element with Green_Text id
 }
 
-function myFunction(){
+function myFunction() {
     var sentence = "I am Learning";
     sentence += " a lot from this!";
     document.getElementById("Concatencate").innerHTML = sentence;
