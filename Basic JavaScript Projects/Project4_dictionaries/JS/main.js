@@ -10,3 +10,8 @@ function my_Dictionary() {
     delete Animal.Sound;
     document.getElementById("Dictionary").innerHTML = Animal.Sound;
 }
+
+//Words and numbers // 
+document.write(typeof "Hello");
+document.write(typeof 3);
+document.write("10" + 5);
