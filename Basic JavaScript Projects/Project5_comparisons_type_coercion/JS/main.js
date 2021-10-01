@@ -3,11 +3,11 @@ function my_Function() {
     document.getElementById("Test").innerHTML = isNaN('007');
 }
 
-//document.write(2E310);
-//document.write(-2E310);
+document.write(2E310);
+document.write(-2E310);
 
-//document.write(10 > 2);     True
-//document.write(10 < 2);     false
+// document.write(10 > 2);     True
+// document.write(10 < 2);     false
 
 console.log(2 + 2);
 
@@ -17,6 +17,11 @@ document.write(5 > 2 && 10 > 4); // true
 document.write(5 > 10 && 10 > 4); // false
 document.write(5 > 10 || 10 > 4); // true
 document.write(5 > 10 || 10 > 20); // false
+
+//Words and numbers // 
+document.write(typeof "Word");
+document.write(typeof  3);
+document.write("10" + 5);
 
 function not_Function() {
     document.getElementById("Not").innerHTML = !(20 > 10);
