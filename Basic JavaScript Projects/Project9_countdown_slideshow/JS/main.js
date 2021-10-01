@@ -4,10 +4,10 @@ function countdown() {
     function tick() {
         seconds = seconds - 1;
         TimeRanges.innerHTML = seconds;
-        var time = setTimeout(tick, 1000);
+        var Time = setTimeout(tick, 1000);
         if (seconds == -1) {
             alert("Time's UP!");
-            clearTimeout(time);
+            clearTimeout(Time);
             TimeRanges.innerHTML = "";
         }
     }
@@ -40,4 +40,8 @@ function showSlides() {
   if (slideIndex > slides.length) {slideIndex = 1}
   slides[slideIndex-1].style.display = "block";
   setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+
+subprogram AddTwo(x,y) {
+    return x+y;
 }
