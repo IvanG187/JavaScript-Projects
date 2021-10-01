@@ -7,7 +7,7 @@ function Add_numbers_2() {
 }
 Add_numbers_1();
 Add_numbers_2();
-
+//^ adding two numbers
 if (6<7) {
     document.write("The left number is smaller than the number on the right.")
 }
@@ -16,7 +16,7 @@ function get_Date() {
         document.getElementById("Greeting").innerHTML = "How are you Today?";
     }
 }
-
+//Voting
 function Age_Function() {
     Age = document.getElementById("Age").value;
     if (Age >= 18) {
@@ -27,7 +27,7 @@ function Age_Function() {
     }
     document.getElementById("How_old_are_you").innerHTML = Vote;
 }
-
+//time Function
 function Time_function() {
     var Time = new Date().getHours();
     var Reply;
