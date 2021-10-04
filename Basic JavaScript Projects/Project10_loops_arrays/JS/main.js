@@ -65,7 +65,7 @@ document.write("<br>" + X);
 
 
   // Objects
-
+  function myFunction2() {
   let car = {
       make: "Dodge ",
       model: "Viper ",
@@ -76,3 +76,4 @@ document.write("<br>" + X);
       }
   };
   document.getElementById("Car_Object").innerHTML = car.description();
+}
