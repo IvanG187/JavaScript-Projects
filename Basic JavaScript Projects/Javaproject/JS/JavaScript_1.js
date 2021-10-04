@@ -30,11 +30,29 @@ function Color_Function() {
 }
 document.write(3 + "3" +3);
 
-X = ;
+X = 6;
 document.write(5);
 var X = 10;
 
-function Hello_World_Function() {
+function Hello() {
     var A = document.getElementsByClassName("Click");
-    A[0].innerHTML = "The Text has Changed!!!!!!";
+    A[0].innerHTML = "The Text has Changed!";
 }
+
+
+function myCanvas() {
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    var img = document.getElementById("scream");
+    ctx.drawImage(img,10,10);
+    // GRADIENT COLOR
+   // var c = document.getElementById("myCanvas");
+//var ctx = c.getContext("2d");
+
+//var grd = ctx.createLinearGradient(0, 0, 170, 0);
+//grd.addColorStop(0, "black");
+//grd.addColorStop(1, "white");
+
+//ctx.fillStyle = grd;
+//ctx.fillRect(20, 20, 150, 100);
+  }
