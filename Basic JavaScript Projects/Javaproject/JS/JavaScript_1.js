@@ -29,3 +29,12 @@ function Color_Function() {
     document.getElementById("Output").innerHTML = Color_Output;
 }
 document.write(3 + "3" +3);
+
+X = ;
+document.write(5);
+var X = 10;
+
+function Hello_World_Function() {
+    var A = document.getElementsByClassName("Click");
+    A[0].innerHTML = "The Text has Changed!!!!!!";
+}
