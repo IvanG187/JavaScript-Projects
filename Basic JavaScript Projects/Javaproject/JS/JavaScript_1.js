@@ -1,64 +1,31 @@
-// count to 10
-function count_To_Ten() {
-    var Digit = "";
-    var X = 1;
-    while (X < 11) {
-        Digit += "<br>" + X;
-        X++;
+function Color_Function() {
+    var Color_Output;
+    var Colors = document.getElementById("Color_Input").ariaValueMax;
+    var color_Spring = " is a great color!";
+    switch(Colors) {
+        case "Red":
+            Color_Output = "Red" + Color_String;
+            break;
+            case "Yellow":
+                Color_Output = "Yellow" + Color_String;
+            break;
+            case "Green":
+                Color_Output = "Green" + Color_String;
+            break;
+            case "Blue":
+                Color_Output = "Blue" + Color_String;
+            break;
+            case "Pink":
+                Color_Output = "Pink" + Color_String;
+            break;
+            case "Purple":
+                Color_Output = "Purple" + Color_String;
+            break;
+            default:
+                Color_Output = "Please Enter a color exactly as written on the above list";
+       
+
     }
-    document.getElementById("Counting_to_Ten").innerHTML = Digit;
+    document.getElementById("Output").innerHTML = Color_Output;
 }
-// Instrument printing
-var Instruments = ["Guitar","Drums","Piano","Bass","Violin","Trumpet","Flute"];
-var Content = "";
-var Y;
-function for_Loop() {
-    for (Y = 0; Y < Instruments.length; Y++) {
-        Content += Instruments[Y] + "<br>";
-    }
-    document.getElementById("List_of_Instruments").innerHTML = Content;
-}
-
-// my Function picture array
-function e30_pics() {
-    var e30s = [];
-    e30s [0] = "drifting";
-    e30s [1] = "speeding";
-    e30s [2] = "standing still";
-    e30s [3] = "cornering";
-    document.getElementById("BMW").innerHTML = "In this picture, the E30 is " +
-    e30s[0] + ".";
-}
-
-// Function Scope
-function myFunction() {
-    var carName = "BMW";
-    document.getElementById("Example").innerHTML = carName;
-}
-
-// Const Keyword
-function constant_function(){
-    const Musical_Instrument = {type:"guitar",brand:"Fender",color:"black"};
-    Musical_Instrument.color = "blue";
-    Musical_Instrument.price = "$900";
-    document.getElementById("Constant").innerHTML = "The Cost of the " +
-    Musical_Instrument.type + " was " + Musical_Instrument.price;
-}
-
-// LET
-var X = 82;
-document.write(X);
-{
-    let X = 33
-    document.write("<br>" + X);
-}
-document.write("<br>" + X);
-document.write("<br>")
-document.write("<br>")
-var X = 82;
-document.write(X);
-{
-    var X = 33;
-    document.write("<br>" + X);
-}
-document.write("<br>" + X);
+document.write(3 + "3" +3);
