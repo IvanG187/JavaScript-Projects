@@ -32,12 +32,12 @@ function placeXOrO(squareNumber) {
         //if active player is anything other than X    
         } else {
             //Change the activePlayer to X
-            activePlayer = X;
+            activePlayer = 'X';
         }
         
 
         //This function plays placement sound.
-        Audio('./media/place.mp3');
+        audio('./media/place.mp3');
         //This condition checks to see if it is computers turn.
         if(activePlayer === 'O') {
             //This function disables clicking for the computer choice.
@@ -54,7 +54,7 @@ function placeXOrO(squareNumber) {
         let success = false;
         //this variable stores a random number 0-8.
         let pickASquare;
-        //this condition allows our while loop to keep trying if a square is selected akready
+        //this condition allows our while loop to keep trying if a square is selected already
         while(!success) {
             // A random number between 0 and 8 is selected.
             pickASquare - String(Math.floor(Math.random() * 9));
@@ -108,7 +108,7 @@ function checkWinConditions() {
     //squares are selected the code executes.
     else if (selectedSquares.length >= 9) {
         //This function playes the tie game sound.
-        Audio('./media/tie.mp3');
+        audio('./media/tie.mp3');
         // This function sets a .3 second timer before the resetGame is called.
         setTimeout(function () {resetGame(); }, 1000);
 
@@ -138,7 +138,7 @@ function disableClick() {
 
 //this function takes a string parameter of the path you set earlier for 
 //placement sound
-function Audio(audioURL) {
+function audio(audioURL) {
     //We create a new audio object and we pass the path as a parameter.
     let audio = new Audio(audioURL);
     //Play method plays our audio sound.
@@ -146,7 +146,7 @@ function Audio(audioURL) {
 }
 
 //This function utilizes html canvas to draw win lines
-function drawWinLine(coordX1, coordY1, coordX2, CoordY2) {
+function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
     //This line accesses our html canvas element.
     const canvas = document.getElementById('win-lines')
     //This line indicates where the start of a lines x axis is.
@@ -161,7 +161,7 @@ function drawWinLine(coordX1, coordY1, coordX2, CoordY2) {
     x = x1,
     //This variable stores temporary y axis data we update in animation loop.
     y = y1;
-}
+
 
 //This function interacts with the cavnas
 function animateLineDrawing() {
@@ -200,6 +200,7 @@ function animateLineDrawing() {
     }
 }
 
+
 //This function clears our canvas after our win line is drawn.
 function clear() {
     //This line starts our animation loop
@@ -229,4 +230,5 @@ function resetGame() {
     }
     //This resets our array so it is empty and we can start over.
     selectedSquares = [];
+}
 }
