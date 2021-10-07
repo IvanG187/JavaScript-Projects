@@ -89,9 +89,9 @@ function checkWinConditions() {
     // X 0, 4, 8
     else if (arrayIncludes('0X', '4X', '8X')) { drawWinLine(100, 100, 520, 520) }
     // O 0 ,1, 2
-    else if (arrayIncludes('0X', '1X', '2X')) { drawWinLine(50, 100, 558, 100) }
+    else if (arrayIncludes('0O', '1O', '2O')) { drawWinLine(50, 100, 558, 100) }
     // O 3, 4, 5
-    else if (arrayIncludes('3X', '4X', '5X')) { drawWinLine(50, 304, 558, 304) }
+    else if (arrayIncludes('3O', '4O', '5O')) { drawWinLine(50, 304, 558, 304) }
     // O 6, 7, 8
     else if (arrayIncludes('6O', '7O', '8O')) { drawWinLine(50, 508, 558, 508) }
     // O 0, 3, 6
@@ -110,9 +110,8 @@ function checkWinConditions() {
         //This function playes the tie game sound.
         audio('./media/tie.mp3');
         // This function sets a .3 second timer before the resetGame is called.
-        setTimeout(function () {resetGame(); }, 1000);
-
-    }
+        setTimeout(function () { resetGame(); }, 1000);
+}
 
 
 
@@ -149,6 +148,8 @@ function audio(audioURL) {
 function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
     //This line accesses our html canvas element.
     const canvas = document.getElementById('win-lines')
+
+    const c = canvas.getContext('2d');
     //This line indicates where the start of a lines x axis is.
     let x1 = coordX1,
     //This line indicates where the start of a lines y axis is
@@ -168,7 +169,7 @@ function animateLineDrawing() {
     //This variable creates a loop.
     const animationLoop = requestAnimationFrame(animateLineDrawing);
     //This method clears content from last loop iteration.
-    c.clearRect(0, 0, 608, 608)
+    c.clearRect(0, 0, 608, 608);
     //this method starts a new path
     c.beginPath();
     //This method moves us moves us to a starting point for our line.
@@ -178,24 +179,24 @@ function animateLineDrawing() {
     //This method sets the width of our line.
     c.lineWidth = 10;
     //This method sets the color of our line.
-    c.strokeStyle = 'rgba(70, 255, 38, .8)';
+    c.strokeStyle = 'rgba(70, 255, 38, 0.8)';
     //This method draws everything we laid out above.
     c.stroke();
     //This condition checks if weve reached the endpoint.
-    if(x1 <= x2 && y1 <= y2) {
+    if (x1 <= x2 && y1 <= y2) {
         //This condition adds 10 to the previous end x point.
-        if(x < x2) { x += 10; }
+        if (x < x2) { x += 10; }
         //This condition adds 10 to the previous end Y point.
         if (y < y2) { y += 10; }
         //This condition cancels our animation loop
         //if weve reach the end points
-        if (x >= x2 && y >= y2) {cancelAnimationFrame(animationLoop); }
+        if (x >= x2 && y >= y2) { cancelAnimationFrame(animationLoop); }
     }
     //This condition is similar to the one above
     //this is necessary for the 6, 4, 2 win condition
     if (x1 <= x2 && y1 >= y2) {
-        if (x < x2) {x += 10; }
-        if (y > y2) {y -= 10; }
+        if (x < x2) { x += 10; }
+        if (y > y2) { y -= 10; }
         if (x >= x2 && y <= y2) { cancelAnimationFrame(animationLoop); }
     }
 }
@@ -230,5 +231,5 @@ function resetGame() {
     }
     //This resets our array so it is empty and we can start over.
     selectedSquares = [];
-}
+ }
 }
