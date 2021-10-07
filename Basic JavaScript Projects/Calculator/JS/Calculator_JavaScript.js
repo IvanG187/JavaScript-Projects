@@ -49,7 +49,7 @@ function Handle_Opeerator(Next_Operator) {
     if (First_Operand == null) {
         Calculator.First_Operand = Value_of_Input;
     } else if (operator) { //checks if an operator already exists
-        const Value_Now = First_Operand |  0;
+        const Value_Now = First_Operand ||  0;
         // if operator exists property look up is performed for the operator in the perform calculation object and function that matches operator is executed
         let result = Perform_Calculation[operator](Value_Now, Value_of_Input);
         //here we add a fixed amount of numbers after the decimal
@@ -100,17 +100,18 @@ keys.addEventListener("click"), (event) => {
         return;
     }
 }
-if (!target.classList.contains("operator")) {
-    Handle_Opeerator(target.value);
-    Update_Display();
-    return;
-}
-// ensures that AC clears the numbers from the calculator
-if (target.classList.contains("all-clear")) {
-    Calculator_Reset();
-    Update_Display();
-    return;
-}
+    if (!target.classList.contains("operator")) {
+        Handle_Opeerator(target.value);
+        Update_Display();
+        return;
+    }
+    // ensures that AC clears the numbers from the calculator
+    if (target.classList.contains("all-clear")) {
+        Calculator_Reset();
+        Update_Display();
+        return;
+    }
 
 Input_Digit(target.value);
 Update_Display();
+}}
