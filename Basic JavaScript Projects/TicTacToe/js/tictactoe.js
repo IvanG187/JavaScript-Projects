@@ -8,7 +8,7 @@ function placeXOrO(squareNumber) {
     //This condition ensures a square hasnt been selected already.
     //the .some() method is used to check each element of selectedSquare array
     //to see if it contains the square number clicked on
-    if(!selectedSquares.some(Element => Element.includes(squareNumber))) {
+    if(!selectedSquares.some(element => element.includes(squareNumber))) {
         //This variable retrieves the html element id that was clicked.
         let select = document.getElementById(squareNumber);
         //This condition checks whos turn it is
@@ -57,7 +57,7 @@ function placeXOrO(squareNumber) {
         //this condition allows our while loop to keep trying if a square is selected already
         while(!success) {
             // A random number between 0 and 8 is selected.
-            pickASquare - String(Math.floor(Math.random() * 9));
+            pickASquare = String(Math.floor(Math.random() * 9));
             //If the random number evaluated returns true, the square hasnt been selected yet
             if (placeXOrO(pickASquare)) {
                 //This line calls the function.
@@ -184,7 +184,7 @@ function animateLineDrawing() {
     //This condition checks if weve reached the endpoint.
     if(x1 <= x2 && y1 <= y2) {
         //This condition adds 10 to the previous end x point.
-        if(x < x2) { x += 10;}
+        if(x < x2) { x += 10; }
         //This condition adds 10 to the previous end Y point.
         if (y < y2) { y += 10; }
         //This condition cancels our animation loop
@@ -208,7 +208,7 @@ function clear() {
     //This line clears our canvas.
     c.clearRect(0, 0, 608, 608);
     //This line stops our animation loop.
-    cancelAnimationFrame(animateLoop);
+    cancelAnimationFrame(animationLoop);
 }
 //This line disallows clicking while the win sound is playing.
 disableClick();
