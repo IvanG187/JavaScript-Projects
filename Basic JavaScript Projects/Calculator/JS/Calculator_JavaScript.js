@@ -36,7 +36,7 @@ function Input_Decimal(dot) {
 }
 
 // this section handles operators
-function Handle_Opeerator(Next_Operator) {
+function Handle_Operator(Next_Operator) {
     const { First_Operand, Display_Value, operator } = Calculator
     // when an operator key is pressed we convert the current number displayed on the screen to a number and then store the results in
     // calculator first operand if it doesnt already exist
@@ -90,28 +90,31 @@ function Update_Display() {
 }
 
 Update_Display();
-// this section moitors button clicks
-const keys = document.querySelector(".calculator-keys");
-keys.addEventListener("click"), (event) => {
-    //the target variable is an object that represents the element that was clicked
+const keys = document.querySelector('.calculator-keys');
+keys.addEventListener('click', (event) => {
     const { target } = event;
-    // if the element that was clicked on is not a button, exit the function
-    if (!target.matches("button")) {
+    if (!target.matches('button')) {
         return;
     }
-}
-    if (!target.classList.contains("operator")) {
-        Handle_Opeerator(target.value);
-        Update_Display();
-        return;
-    }
-    // ensures that AC clears the numbers from the calculator
-    if (target.classList.contains("all-clear")) {
-        Calculator_Reset();
+
+    if(target.ClassList.contains('operator')) {
+        Handle_Operator(target.value);
         Update_Display();
         return;
     }
 
+if(target.ClassList.contains('decimal')) {
+    Input_Decimal(target.value);
+    Update_Display();
+    return;
+}
+
+if (target.ClassList.contains('all-clear')) {
+    Calculator_Reset();
+    Update_Display();
+    return;
+}
+
 Input_Digit(target.value);
 Update_Display();
-}}
+})

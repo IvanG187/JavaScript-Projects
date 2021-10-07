@@ -12,7 +12,7 @@ html {
 .calculator {
     border: 1.2px solid darkslategray;
     border-radius: 7px;
-    position: absolute;
+    position: center;
     top: 50%;
     left: 50%;
     transform: translat(-50%, -50%);
