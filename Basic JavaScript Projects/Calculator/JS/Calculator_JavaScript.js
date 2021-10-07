@@ -97,19 +97,19 @@ keys.addEventListener('click', (event) => {
         return;
     }
 
-    if(target.ClassList.contains('operator')) {
+    if(target.classList.contains('operator')) {
         Handle_Operator(target.value);
         Update_Display();
         return;
     }
 
-if(target.ClassList.contains('decimal')) {
+if(target.classList.contains('decimal')) {
     Input_Decimal(target.value);
     Update_Display();
     return;
 }
 
-if (target.ClassList.contains('all-clear')) {
+if (target.classList.contains('all-clear')) {
     Calculator_Reset();
     Update_Display();
     return;
